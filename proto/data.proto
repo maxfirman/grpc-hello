@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package data;
+
+service DataService {
+  rpc GetData (DataRequest) returns (DataResponse) {}
+}
+
+message DataRequest {
+    string name = 1;
+}
+
+message DataResponse {
+    repeated Record records = 1;
+}
+
+message Record {
+    string string_val = 1;
+    int32 int_val = 2;
+    float float_val = 3;
+}
